@@ -1,0 +1,9 @@
+.music-card-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  .card {
+    width: 200px;
+    margin-bottom: 20px;
+  }
+}

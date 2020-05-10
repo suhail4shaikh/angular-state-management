@@ -1,0 +1,25 @@
+<div class="page-wrapper">
+
+	<h1 class="title">Angular Testing</h1>
+
+	<div class="row">
+		<div class="col-5">
+			<form>
+				<div class="form-group">
+					<label for="search">Your search end here !!!</label>
+					<input type="text" class="form-control" id="search" #search (input)="getMusic(search.value)"
+						placeholder="Search music here !!!">
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<div class="records-wrapper">
+		<div class="row">
+			<div class="col">
+				<app-music-card></app-music-card>
+			</div>
+		</div>
+	</div>
+
+</div>
