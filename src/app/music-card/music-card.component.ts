@@ -6,29 +6,29 @@ import { SearchAction, AddRecords } from '../store/action';
 import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'app-music-card',
-  templateUrl: './music-card.component.html',
-  styleUrls: ['./music-card.component.scss']
+    selector: 'app-music-card',
+    templateUrl: './music-card.component.html',
+    styleUrls: ['./music-card.component.scss']
 })
 export class MusicCardComponent implements OnInit {
 
-  getRecords: Observable<IRecord>;
-  allrecord;
+    getRecords: Observable<IRecord>;
+    allrecord;
 
-  constructor(
-    public common: SharedService,
-    private store: Store<AppState>
-  ) {
-    this.getRecords = this.store.select('allRecords');
-  }
+    constructor(
+        public common: SharedService,
+        private store: Store<AppState>
+    ) {
+        this.getRecords = this.store.select('allRecords');
+    }
 
-  ngOnInit() {
+    ngOnInit() {
 
-    this.common.passData.subscribe((resp) => {
-      this.store.dispatch(new SearchAction());
-      this.store.dispatch(new AddRecords(resp));
-    });
+        this.common.passData.subscribe((resp) => {
+            this.store.dispatch(new SearchAction());
+            this.store.dispatch(new AddRecords(resp));
+        });
 
-  }
+    }
 
 }
