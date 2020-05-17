@@ -1,0 +1,20 @@
+<div class="row">
+    <div class="col">
+        <form [formGroup]="loginForm">
+            <fieldset>
+                <label for="username">
+                    Username :
+                    <input type="text" id="username" name="username" formControlName="usernameCtrl"/>
+                </label>
+            </fieldset>
+            <fieldset>
+                <label for="password">
+                    Password :
+                    <input type="password" id="password" name="password" formControlName="passwordCtrl"/>
+                </label>
+            </fieldset>
+            <button disabled>Submit</button>
+        </form>
+    </div>
+</div>
+
