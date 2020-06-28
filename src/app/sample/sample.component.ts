@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { GetMusicService } from '../common/service/get-music.service';
 import { SharedService } from '../common/service/shared.service';
 import { FormGroup, FormControl } from '@angular/forms';
@@ -9,13 +9,18 @@ import {
     filter, tap, catchError
 } from 'rxjs/operators';
 import { of } from 'rxjs';
+import { CounterComponent } from '../counter/counter.component';
 
 @Component({
     selector: 'app-sample',
     templateUrl: './sample.component.html',
     styleUrls: ['./sample.component.scss']
 })
-export class SampleComponent implements OnInit {
+export class SampleComponent implements OnInit, AfterViewInit {
+
+    @ViewChild(CounterComponent, {static: false})
+    private counter: CounterComponent;
+
     form = new FormGroup({
         searchCtrl: new FormControl('')
     });
@@ -25,6 +30,7 @@ export class SampleComponent implements OnInit {
     ) { }
 
     ngOnInit() {
+
         this.form.get('searchCtrl').valueChanges.pipe(
             debounceTime(400),
             distinctUntilChanged(),
@@ -35,5 +41,7 @@ export class SampleComponent implements OnInit {
         ).subscribe(res => this.common.passData.next(res));
     }
 
+    ngAfterViewInit() {
+    }
 
 }

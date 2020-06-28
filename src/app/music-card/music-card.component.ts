@@ -24,7 +24,7 @@ export class MusicCardComponent implements OnInit {
 
     ngOnInit() {
 
-        this.common.passData.subscribe((resp) => {
+        this.common.passData.pipe().subscribe((resp: IRecord | null) => {
             this.store.dispatch(new SearchAction());
             this.store.dispatch(new AddRecords(resp));
         });

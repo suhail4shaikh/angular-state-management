@@ -8,6 +8,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ChildComponent } from './child/child.component';
 import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CounterComponent } from './counter/counter.component';
 
 
 const routes: Routes = [
@@ -44,8 +45,12 @@ const routes: Routes = [
 ];
 
 @NgModule({
-    declarations: [AboutComponent, SampleComponent, MusicCardComponent, PagenotfoundComponent, ChildComponent, LoginComponent],
+    declarations: [
+        AboutComponent, SampleComponent, MusicCardComponent, PagenotfoundComponent, ChildComponent, LoginComponent, CounterComponent],
     imports: [RouterModule.forRoot(routes), BrowserModule, ReactiveFormsModule],
-    exports: [RouterModule, AboutComponent, SampleComponent, MusicCardComponent, PagenotfoundComponent, ChildComponent, LoginComponent]
+    exports: [
+            RouterModule, AboutComponent, SampleComponent,
+            MusicCardComponent, PagenotfoundComponent, ChildComponent,
+            LoginComponent, CounterComponent]
 })
 export class AppRoutingModule { }

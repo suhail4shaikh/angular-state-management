@@ -3,6 +3,10 @@
 	<h1 class="title">Angular Testing</h1>
     <a routerLink="../lazy">Load Lazy module</a><br/>
     <a [routerLink]="['/list','15']">Pass data via router</a>
+    <app-counter #counter></app-counter>
+    <button (click)="counter.start()">Start</button>
+<button (click)="counter.stop()">Stop</button>
+<button (click)="counter.reset()">Reset</button>
 	<div class="row">
 		<div class="col-5">
 			<form [formGroup]="form">

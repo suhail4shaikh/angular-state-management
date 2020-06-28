@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { of, BehaviorSubject } from 'rxjs';
+import { of, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SharedService {
 
-  passData = new BehaviorSubject(null);
+  passData = new Subject();
   constructor() {
 
   }
